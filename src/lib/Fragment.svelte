@@ -1,5 +1,11 @@
 <script>
-  import * as Svelte from 'svelte'
+  import {
+    setContext,
+    onMount as _onMount,
+    beforeUpdate as _beforeUpdate,
+    afterUpdate as _afterUpdate,
+    onDestroy as _onDestroy
+  } from 'svelte'
 
   export let context = null
   export let onMount = null
@@ -9,14 +15,14 @@
 
   if (context) {
     Object.keys(context).forEach((key) => {
-      Svelte.setContext(key, context[key])
+      setContext(key, context[key])
     })
   }
 
-  if (onMount) Svelte.onMount(bind(onMount))
-  if (beforeUpdate) Svelte.beforeUpdate(bind(beforeUpdate))
-  if (afterUpdate) Svelte.afterUpdate(bind(afterUpdate))
-  if (onDestroy) Svelte.onDestroy(bind(onDestroy))
+  if (onMount) _onMount(bind(onMount))
+  if (beforeUpdate) _beforeUpdate(bind(beforeUpdate))
+  if (afterUpdate) _afterUpdate(bind(afterUpdate))
+  if (onDestroy) _onDestroy(bind(onDestroy))
 
   function bind(callback) {
     return () => callback({ props: $$restProps })
