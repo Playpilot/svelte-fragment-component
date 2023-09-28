@@ -1,5 +1,5 @@
 {
-	"name": "svelte-4-fragment-component",
+	"name": "@mitcheljager/svelte-fragment-component",
 	"version": "1.0.0",
 	"scripts": {
 		"dev": "vite dev",
