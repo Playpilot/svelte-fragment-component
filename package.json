@@ -1,5 +1,5 @@
 {
-	"name": "@mitcheljager/svelte-fragment-component",
+	"name": "@playpilot_tech/svelte-fragment-component",
 	"version": "1.0.1",
 	"scripts": {
 		"dev": "vite dev",
